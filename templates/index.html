@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bike Price Prediction System</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #eef2f3;
+            height: 100vh;
+            overflow-y: hidden;
+        }
+
+        header {
+            background-color: #1e3d59;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        section {
+            padding: 20px;
+            margin: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        .buttonGroup {
+            width: 100vw;
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            position: relative;
+            margin-top: 30px;
+        }
+
+        .buttonGroup button {
+            font-size: 1rem;
+            padding: 0.7rem 1.5rem;
+            border-radius: 6px;
+            border: 1px solid #1e3d59;
+            background-color: white;
+            color: #1e3d59;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .buttonGroup button:hover {
+            background-color: #1e3d59;
+            color: white;
+        }
+
+        .bike-img {
+            width: 100vw;
+            z-index: -2;
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 0.2;
+        }
+
+        footer {
+            background-color: #1e3d59;
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1>🏍️ Bike Price Prediction System</h1>
+</header>
+
+<section>
+    <h2>About</h2>
+    <p>
+        Welcome to the Bike Price Prediction System — a smart tool that predicts the estimated 
+        price of a bike based on details such as brand, model year, kilometers driven, fuel type, 
+        and engine capacity.  
+        Our Machine Learning model provides fast and accurate price predictions.
+    </p>
+</section>
+
+<div class="buttonGroup">
+    <a href="/predict"><button>Predict Bike Price</button></a>
+    <a href="/contact"><button>Contact Us</button></a>
+    <a href="/about"><button>About Project</button></a>
+
+    <img src="https://img.freepik.com/free-vector/motorcycle-concept-illustration_114360-1266.jpg"
+         alt="Bike Image" class="bike-img">
+</div>
+
+<footer>
+    <p>&copy; 2026 Bike Price Prediction System. All rights reserved.</p>
+</footer>
+
+</body>
+</html>
