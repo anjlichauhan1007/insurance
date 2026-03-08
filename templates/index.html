@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
 <<<<<<< HEAD
+<<<<<<< HEAD
     <title>Bike Price Prediction System</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -258,5 +259,111 @@
 
     <script src="{{ url_for('static', filename='js/script.js') }}"></script>
 >>>>>>> 924484f17163f2de97e3022ac2356c291eb415dd
+=======
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Insurance Cost Predictor</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            font-family: 'Arial', sans-serif;
+        }
+        .container {
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            padding: 40px;
+            margin-top: 50px;
+        }
+        h1 {
+            color: #333;
+            text-align: center;
+            margin-bottom: 30px;
+            font-weight: bold;
+        }
+        .form-label {
+            font-weight: 600;
+            color: #555;
+        }
+        .btn-primary {
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            border: none;
+            padding: 12px 30px;
+            font-size: 18px;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+        }
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        .prediction-result {
+            background: #f8f9fa;
+            border-radius: 10px;
+            padding: 20px;
+            margin-top: 30px;
+            text-align: center;
+            font-size: 24px;
+            font-weight: bold;
+            color: #28a745;
+        }
+        .form-control {
+            border-radius: 8px;
+            border: 2px solid #ddd;
+            transition: border-color 0.3s ease;
+        }
+        .form-control:focus {
+            border-color: #667eea;
+            box-shadow: 0 0 0 0.2rem rgba(102, 126, 234, 0.25);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🩺 Insurance Cost Predictor</h1>
+        <form method="POST" action="/predict">
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    <label for="age" class="form-label">Age</label>
+                    <input type="number" class="form-control" id="age" name="age" required min="18" max="100" placeholder="Enter your age">
+                </div>
+                <div class="col-md-6 mb-3">
+                    <label for="gender" class="form-label">Gender</label>
+                    <select class="form-control" id="gender" name="gender" required>
+                        <option value="">Select Gender</option>
+                        <option value="female">Female</option>
+                        <option value="male">Male</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    <label for="bmi" class="form-label">BMI</label>
+                    <input type="number" class="form-control" id="bmi" name="bmi" required step="0.1" min="10" max="50" placeholder="Enter your BMI">
+                </div>
+                <div class="col-md-6 mb-3">
+                    <label for="region" class="form-label">Region</label>
+                    <select class="form-control" id="region" name="region" required>
+                        <option value="">Select Region</option>
+                        <option value="southwest">Southwest</option>
+                        <option value="southeast">Southeast</option>
+                        <option value="northwest">Northwest</option>
+                        <option value="northeast">Northeast</option>
+                    </select>
+                </div>
+            </div>
+            <div class="text-center">
+                <button type="submit" class="btn btn-primary">Predict Insurance Cost</button>
+            </div>
+        </form>
+        {% if prediction %}
+        <div class="prediction-result">
+            💰 Predicted Insurance Cost: ${{ prediction }}
+        </div>
+        {% endif %}
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+>>>>>>> 9af485820c724aa96b8dbab86776df53cb927887
 </body>
 </html>

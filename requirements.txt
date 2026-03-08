@@ -1,6 +1,13 @@
+<<<<<<< HEAD
 pandas
 numpy
 matplotlib
 scikit-learn
 seaborn
 flask
+=======
+Flask==2.3.3
+joblib==1.3.2
+numpy==1.24.3
+scikit-learn==1.3.0
+>>>>>>> 9af485820c724aa96b8dbab86776df53cb927887
