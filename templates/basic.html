@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animal Gallery</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #fff;
+            overflow-x: hidden;
+            animation: fadeIn 1s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 3em;
+            margin-bottom: 40px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            animation: slideInFromTop 1s ease-out;
+        }
+
+        @keyframes slideInFromTop {
+            from { transform: translateY(-50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        .animal-list {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 40px;
+        }
+
+        .animal-list li {
+            list-style: none;
+            margin: 10px;
+            padding: 10px 20px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .animal-list li:hover {
+            transform: scale(1.1);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+        }
+
+        .animal-cards {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+
+        .animal-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(15px);
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            margin: 20px;
+            padding: 20px;
+            width: 300px;
+            text-align: center;
+            transition: all 0.3s ease;
+            animation: fadeInUp 1s ease-out;
+            animation-fill-mode: both;
+        }
+
+        .animal-card:nth-child(1) { animation-delay: 0.1s; }
+        .animal-card:nth-child(2) { animation-delay: 0.2s; }
+        .animal-card:nth-child(3) { animation-delay: 0.3s; }
+        .animal-card:nth-child(4) { animation-delay: 0.4s; }
+        .animal-card:nth-child(5) { animation-delay: 0.5s; }
+
+        @keyframes fadeInUp {
+            from { transform: translateY(30px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        .animal-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+        }
+
+        .animal-card h2 {
+            margin-top: 0;
+            font-size: 1.5em;
+            background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .animal-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+            transition: all 0.3s ease;
+        }
+
+        .animal-card:hover img {
+            transform: scale(1.1);
+        }
+
+        .animal-card p {
+            font-size: 0.9em;
+            line-height: 1.4;
+        }
+
+        .popup {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(10px);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            animation: blurIn 0.3s ease;
+        }
+
+        @keyframes blurIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .popup-content {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(20px);
+            border-radius: 20px;
+            padding: 30px;
+            max-width: 500px;
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .popup-content h2 {
+            margin-top: 0;
+        }
+
+        .popup-content img {
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        .animal-card:hover .popup {
+            display: flex;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>LIST OF ANIMALS</h1>
+        <ul class="animal-list">
+            <li>i. Elephant</li>
+            <li>ii. Tiger</li>
+            <li>iii. Lion</li>
+            <li>iv. Giraffe</li>
+            <li>v. Zebra</li>
+        </ul>
+
+        <div class="animal-cards">
+            <div class="animal-card">
+                <h2>Elephant</h2>
+                <a href="https://en.wikipedia.org/wiki/Elephant">
+                    <img src="WWW-African-Elephant-Elephants-c-Big-Life-Foundation-1.webp" alt="Elephant">
+                </a>
+                <p><i>Elephants</i> are the largest living land animals. Three living species are currently recognised: the African bush elephant (Loxodonta africana), the African forest elephant (L. cyclotis), and the Asian elephant (Elephas maximus).</p>
+                <div class="popup">
+                    <div class="popup-content">
+                        <h2>Elephant</h2>
+                        <img src="WWW-African-Elephant-Elephants-c-Big-Life-Foundation-1.webp" alt="Elephant">
+                        <p>Learn more about elephants on Wikipedia!</p>
+                        <a href="https://en.wikipedia.org/wiki/Elephant" style="color: #4ecdc4;">Visit Wikipedia</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="animal-card">
+                <h2>Tiger</h2>
+                <a href="https://en.wikipedia.org/wiki/Tiger">
+                    <img src="tiger.webp" alt="Tiger">
+                </a>
+                <p>The tiger <i>(Panthera tigris)</i> is a large cat and a member of the genus Panthera native to Asia. It has a powerful, muscular body with a large head and paws, a long tail and orange fur with black, mostly vertical stripes.</p>
+                <div class="popup">
+                    <div class="popup-content">
+                        <h2>Tiger</h2>
+                        <img src="tiger.webp" alt="Tiger">
+                        <p>Learn more about tigers on Wikipedia!</p>
+                        <a href="https://en.wikipedia.org/wiki/Tiger" style="color: #4ecdc4;">Visit Wikipedia</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="animal-card">
+                <h2>Lion</h2>
+                <a href="https://en.wikipedia.org/wiki/Lion">
+                    <img src="lion.jpg" alt="Lion">
+                </a>
+                <p>The lion <i>(Panthera leo)</i> is a species in the family Felidae and a member of the genus Panthera. It is most recognisable for its muscular, deep-chested body, short, rounded head, round ears, and a hairy tuft at the end of its tail.</p>
+                <div class="popup">
+                    <div class="popup-content">
+                        <h2>Lion</h2>
+                        <img src="lion.jpg" alt="Lion">
+                        <p>Learn more about lions on Wikipedia!</p>
+                        <a href="https://en.wikipedia.org/wiki/Lion" style="color: #4ecdc4;">Visit Wikipedia</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="animal-card">
+                <h2>Giraffe</h2>
+                <a href="https://en.wikipedia.org/wiki/Giraffe">
+                    <img src="girafe.jpg" alt="Giraffe">
+                </a>
+                <p>The giraffe <i>(Giraffa camelopardalis)</i> is an African mammal, the tallest living terrestrial animal and the largest ruminant. It is traditionally considered to be one species, G. camelopardalis, with nine subspecies.</p>
+                <div class="popup">
+                    <div class="popup-content">
+                        <h2>Giraffe</h2>
+                        <img src="girafe.jpg" alt="Giraffe">
+                        <p>Learn more about giraffes on Wikipedia!</p>
+                        <a href="https://en.wikipedia.org/wiki/Giraffe" style="color: #4ecdc4;">Visit Wikipedia</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="animal-card">
+                <h2>Zebra</h2>
+                <a href="https://en.wikipedia.org/wiki/Zebra">
+                    <img src="zebra.jpg" alt="Zebra">
+                </a>
+                <p>Zebras are African equines with distinctive black-and-white striped coats. Their stripes come in different patterns, unique to each individual. They are generally social animals that live in small harems to large herds.</p>
+                <div class="popup">
+                    <div class="popup-content">
+                        <h2>Zebra</h2>
+                        <img src="zebra.jpg" alt="Zebra">
+                        <p>Learn more about zebras on Wikipedia!</p>
+                        <a href="https://en.wikipedia.org/wiki/Zebra" style="color: #4ecdc4;">Visit Wikipedia</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
