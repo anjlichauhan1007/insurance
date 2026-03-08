@@ -1,112 +1,8 @@
+-approval\templates\index.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-<<<<<<< HEAD
-    <title>Bike Price Prediction System</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #eef2f3;
-            height: 100vh;
-            overflow-y: hidden;
-        }
-
-        header {
-            background-color: #1e3d59;
-            color: #fff;
-            padding: 20px;
-            text-align: center;
-        }
-
-        section {
-            padding: 20px;
-            margin: 20px;
-            background-color: #fff;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
-        }
-
-        .buttonGroup {
-            width: 100vw;
-            display: flex;
-            justify-content: center;
-            gap: 3rem;
-            position: relative;
-            margin-top: 30px;
-        }
-
-        .buttonGroup button {
-            font-size: 1rem;
-            padding: 0.7rem 1.5rem;
-            border-radius: 6px;
-            border: 1px solid #1e3d59;
-            background-color: white;
-            color: #1e3d59;
-            cursor: pointer;
-            transition: 0.3s;
-        }
-
-        .buttonGroup button:hover {
-            background-color: #1e3d59;
-            color: white;
-        }
-
-        .bike-img {
-            width: 100vw;
-            z-index: -2;
-            position: absolute;
-            top: 0;
-            left: 0;
-            opacity: 0.2;
-        }
-
-        footer {
-            background-color: #1e3d59;
-            color: #fff;
-            text-align: center;
-            padding: 10px;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
-        }
-    </style>
-</head>
-
-<body>
-
-<header>
-    <h1>🏍️ Bike Price Prediction System</h1>
-</header>
-
-<section>
-    <h2>About</h2>
-    <p>
-        Welcome to the Bike Price Prediction System — a smart tool that predicts the estimated 
-        price of a bike based on details such as brand, model year, kilometers driven, fuel type, 
-        and engine capacity.  
-        Our Machine Learning model provides fast and accurate price predictions.
-    </p>
-</section>
-
-<div class="buttonGroup">
-    <a href="/predict"><button>Predict Bike Price</button></a>
-    <a href="/contact"><button>Contact Us</button></a>
-    <a href="/about"><button>About Project</button></a>
-
-    <img src="https://img.freepik.com/free-vector/motorcycle-concept-illustration_114360-1266.jpg"
-         alt="Bike Image" class="bike-img">
-</div>
-
-<footer>
-    <p>&copy; 2026 Bike Price Prediction System. All rights reserved.</p>
-</footer>
-
-=======
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Loan Approval Predictor</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
@@ -130,13 +26,8 @@
         </section>
 
         <section class="form-section">
-            <form id="loanForm" method="POST" action="/predict">
+            <form id="loanForm">
                 <div class="form-row">
-                    <div class="form-group">
-                        <label for="person_age">Age:</label>
-                        <input type="number" id="person_age" name="person_age" required min="18" max="100">
-                    </div>
-
                     <div class="form-group">
                         <label for="person_gender">Gender:</label>
                         <select id="person_gender" name="person_gender" required>
@@ -145,9 +36,7 @@
                             <option value="female">Female</option>
                         </select>
                     </div>
-                </div>
 
-                <div class="form-row">
                     <div class="form-group">
                         <label for="person_education">Education:</label>
                         <select id="person_education" name="person_education" required>
@@ -159,19 +48,9 @@
                             <option value="Associate">Associate</option>
                         </select>
                     </div>
-
-                    <div class="form-group">
-                        <label for="person_income">Annual Income ($):</label>
-                        <input type="number" id="person_income" name="person_income" required min="0" step="1000">
-                    </div>
                 </div>
 
                 <div class="form-row">
-                    <div class="form-group">
-                        <label for="person_emp_exp">Employment Experience (years):</label>
-                        <input type="number" id="person_emp_exp" name="person_emp_exp" required min="0">
-                    </div>
-
                     <div class="form-group">
                         <label for="person_home_ownership">Home Ownership:</label>
                         <select id="person_home_ownership" name="person_home_ownership" required>
@@ -181,13 +60,6 @@
                             <option value="MORTGAGE">Mortgage</option>
                             <option value="OTHER">Other</option>
                         </select>
-                    </div>
-                </div>
-
-                <div class="form-row">
-                    <div class="form-group">
-                        <label for="loan_amount">Loan Amount ($):</label>
-                        <input type="number" id="loan_amount" name="loan_amount" required min="0" step="100">
                     </div>
 
                     <div class="form-group">
@@ -206,29 +78,34 @@
 
                 <div class="form-row">
                     <div class="form-group">
+                        <label for="loan_amount">Loan Amount ($):</label>
+                        <input type="number" id="loan_amount" name="loan_amount" required min="0" step="100">
+                    </div>
+
+                    <div class="form-group">
                         <label for="loan_interest_rate">Interest Rate (%):</label>
                         <input type="number" id="loan_interest_rate" name="loan_interest_rate" required min="0" step="0.01">
                     </div>
+                </div>
 
+                <div class="form-row">
                     <div class="form-group">
-                        <label for="loan_percent_income">Loan Percent of Income (%):</label>
+                        <label for="loan_percent_income">Loan % of Income:</label>
                         <input type="number" id="loan_percent_income" name="loan_percent_income" required min="0" step="0.01">
                     </div>
-                </div>
-
-                <div class="form-row">
-                    <div class="form-group">
-                        <label for="cb_person_cred_hist_length">Credit History Length (years):</label>
-                        <input type="number" id="cb_person_cred_hist_length" name="cb_person_cred_hist_length" required min="0" step="0.1">
-                    </div>
 
                     <div class="form-group">
-                        <label for="credit_score">Credit Score:</label>
-                        <input type="number" id="credit_score" name="credit_score" required min="300" max="850">
+                        <label for="cb_person_cred_hist_length">Credit History (years):</label>
+                        <input type="number" id="cb_person_cred_hist_length" name="cb_person_cred_hist_length" required min="0">
                     </div>
                 </div>
 
                 <div class="form-row">
+                    <div class="form-group">
+                        <label for="cb_person_default_hist_on_file">Previous Defaults:</label>
+                        <input type="number" id="cb_person_default_hist_on_file" name="cb_person_default_hist_on_file" required min="0" value="0">
+                    </div>
+
                     <div class="form-group">
                         <label for="previous_loan_defaults_on_file">Previous Loan Defaults:</label>
                         <select id="previous_loan_defaults_on_file" name="previous_loan_defaults_on_file" required>
@@ -257,6 +134,5 @@
     </footer>
 
     <script src="{{ url_for('static', filename='js/script.js') }}"></script>
->>>>>>> 924484f17163f2de97e3022ac2356c291eb415dd
 </body>
 </html>
